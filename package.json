@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenisHristov12/Natours-NodeJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DenisHristov12/Natours-NodeJS/issues"
+  },
+  "homepage": "https://github.com/DenisHristov12/Natours-NodeJS#readme"
 }
