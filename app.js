@@ -34,6 +34,13 @@ app.get('/api/v1/tours/:id', (req, res) => {
 
   const id = req.params.id * 1;
 
+  if (id > tours.length) {
+    return res.status(404).json({
+      status: 'Fail',
+      message: 'Invalid ID',
+    });
+  }
+
   // const tour = tours[req.params.id];
   const tour = tours.find((el) => el.id === id);
 
@@ -63,6 +70,36 @@ app.post('/api/v1/tours', (req, res) => {
       });
     }
   );
+});
+
+app.patch('/api/v1/tours/:id', (req, res) => {
+  if (req.params.id * 1 > tours.length) {
+    return res.status(404).json({
+      status: 'Fail',
+      message: 'Invalid ID',
+    });
+  }
+
+  res.status(200).json({
+    status: 'Success',
+    data: {
+      tour: '<Updated tour here...>',
+    },
+  });
+});
+
+app.delete('/api/v1/tours/:id', (req, res) => {
+  if (req.params.id * 1 > tours.length) {
+    return res.status(404).json({
+      status: 'Fail',
+      message: 'Invalid ID',
+    });
+  }
+
+  res.status(204).json({
+    status: 'Success',
+    data: null,
+  });
 });
 
 const port = 3000;
